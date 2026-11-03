@@ -5,32 +5,46 @@
 
 {% block body %}
 
+
 <section class="hero" id="accueil">
 
-    <p class="subtitle">
-        ÉTUDIANT EN BUT INFORMATIQUE - 3ÈME ANNÉE
-    </p>
+    <div class="hero-content">
 
-    <h1>
-        Bonjour, je suis <span>[Prénom Nom].</span>
-    </h1>
+        <div class="hero-text">
 
-    <p class="description">
-        Passionné par le développement informatique,
-        je conçois des applications web et souhaite
-        approfondir mes connaissances dans les domaines
-        du Web et de la science des données.
-    </p>
+            <p class="subtitle">
+                ÉTUDIANT EN BUT INFORMATIQUE - 3ÈME ANNÉE
+            </p>
 
-    <p>
-        Actuellement en troisième année de BUT Informatique,
-        je souhaite poursuivre mes études en Master
-        Informatique - Web et Science de Données.
-    </p>
+            <h1>
+                Bonjour, je suis <span id="typing"></span><span class="cursor">|</span>
+            </h1>
 
-    <a href="#projets" class="btn">
-        Découvrir mes projets
-    </a>
+            <p class="description">
+                Passionné par le développement informatique,
+                je conçois des applications web et souhaite
+                approfondir mes connaissances dans les domaines
+                du Web et de la science des données.
+            </p>
+
+            <p>
+                Actuellement en troisième année de BUT Informatique,
+                je souhaite poursuivre mes études en Master
+                Informatique - Web et Science de Données.
+            </p>
+
+            <a href="#projets" class="btn">
+                Découvrir mes projets
+            </a>
+
+        </div>
+
+        <div class="hero-image">
+            <img src="{{ asset('images/image1.jpg') }}"
+                 alt="Photo de Thomas JUSTIN">
+        </div>
+
+    </div>
 
 </section>
 
@@ -38,7 +52,7 @@
     <h2>À propos de moi</h2>
     <p>
         Étudiant en BUT Informatique, j'ai réalisé
-        deux stages dans le développement d'applications
+        un stage dans le développement d'applications
         avec Symfony.
     </p>
 </section>
@@ -49,8 +63,49 @@
 </section>
 
 <section class="content-section" id="contact">
+
     <h2>Me contacter</h2>
-    <p>Tu peux me retrouver sur GitHub et LinkedIn.</p>
+
+    <p>Retrouve-moi sur mes réseaux professionnels :</p>
+
+    <div class="social-links">
+
+        <a href="https://github.com/justinthomas22"
+           target="_blank"
+           rel="noopener noreferrer"
+           aria-label="Mon profil GitHub">
+
+            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/github/github-original.svg"
+                 alt="GitHub">
+        </a>
+
+        <a href="https://www.linkedin.com/in/thomas-justin-96809538a/"
+           target="_blank"
+           rel="noopener noreferrer"
+           aria-label="Mon profil LinkedIn">
+
+            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/linkedin/linkedin-original.svg"
+                 alt="LinkedIn">
+        </a>
+
+    </div>
+
 </section>
+<script>
+    const nom = "Thomas JUSTIN.";
+    const element = document.getElementById("typing");
+
+    let i = 0;
+
+    function ecrire() {
+        if (i < nom.length) {
+            element.innerHTML += nom[i];
+            i++;
+            setTimeout(ecrire, 180);
+        }
+    }
+
+    ecrire();
+</script>
 
 {% endblock %}
