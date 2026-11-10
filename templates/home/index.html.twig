@@ -5,7 +5,6 @@
 
 {% block body %}
 
-
 <section class="hero" id="accueil">
 
     <div class="hero-content">
@@ -33,10 +32,6 @@
                 Informatique - Web et Science de Données.
             </p>
 
-            <a href="#projets" class="btn">
-                Découvrir mes projets
-            </a>
-
         </div>
 
         <div class="hero-image">
@@ -48,18 +43,96 @@
 
 </section>
 
-<section class="content-section" id="apropos">
-    <h2>À propos de moi</h2>
-    <p>
-        Étudiant en BUT Informatique, j'ai réalisé
-        un stage dans le développement d'applications
-        avec Symfony.
+<section class="projets-section" id="projets">
+
+    <p class="subtitle">MES RÉALISATIONS</p>
+    <h2>Mes projets</h2>
+    <p class="projets-intro">
+        Quelques projets réalisés pendant mon BUT Informatique.
     </p>
+
+    <div class="projets-podium">
+
+        <article class="projet-card">
+            <span class="projet-numero">02</span>
+            <h3>SAE Algorithmique et graphes</h3>
+            <p>Étude et implémentation d'algorithmes sur les graphes.</p>
+            <div class="techs">
+                <span>Python</span>
+                <span>Algorithmique</span>
+            </div>
+            <a href="{{ path('projet_detail', {id: 'algorithme-graphes'}) }}" class="btn-projet">
+                Détails <span aria-hidden="true">↗</span>
+            </a>
+        </article>
+
+        <article class="projet-card">
+            <span class="projet-numero">01</span>
+            <h3>Application web de gestion</h3>
+            <p>Application de gestion d'étudiants, de cours et de modules.</p>
+            <div class="techs">
+                <span>PHP</span>
+                <span>POO</span>
+                <span>SQL</span>
+            </div>
+            <a href="{{ path('projet_detail', {id: 'application-gestion'}) }}" class="btn-projet">
+                Détails <span aria-hidden="true">↗</span>
+            </a>
+        </article>
+
+        <article class="projet-card">
+            <span class="projet-numero">03</span>
+            <h3>Projet R2.03</h3>
+            <p>Projet universitaire de programmation orientée objet.</p>
+            <div class="techs">
+                <span>Java</span>
+                <span>POO</span>
+            </div>
+            <a href="{{ path('projet_detail', {id: 'r203'}) }}" class="btn-projet">
+                Détails <span aria-hidden="true">↗</span>
+            </a>
+        </article>
+
+    </div>
+
 </section>
 
-<section class="content-section" id="projets">
-    <h2>Mes projets</h2>
-    <p>Mes réalisations seront bientôt disponibles.</p>
+<section class="parcours-section" id="parcours">
+
+    <div class="parcours-intro">
+        <p class="subtitle">MON PARCOURS</p>
+        <h2>Formation &amp; expérience</h2>
+        <p>
+            Un parcours orienté vers le développement web, la conception
+            d'applications.
+        </p>
+    </div>
+
+    <div class="parcours-list">
+        <article class="parcours-item">
+            <span class="parcours-date">EN COURS</span>
+            <div>
+                <p class="parcours-type">Formation</p>
+                <h3>BUT Informatique — 3e année</h3>
+                <p>
+                    Approfondissement du développement web, de la programmation.
+                </p>
+            </div>
+        </article>
+
+        <article class="parcours-item">
+            <span class="parcours-date">STAGE</span>
+            <div>
+                <p class="parcours-type">Expérience</p>
+                <h3>Développement d'applications avec Symfony</h3>
+                <p>
+                    Découverte du développement d'applications dans un contexte
+                    professionnel et mise en pratique de Symfony.
+                </p>
+            </div>
+        </article>
+    </div>
+
 </section>
 
 <section class="content-section" id="contact">

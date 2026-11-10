@@ -1,0 +1,68 @@
+
+{% extends 'base.html.twig' %}
+
+{% block title %}{{ projet.titre }} - Mon Portfolio{% endblock %}
+
+{% block body %}
+
+<section class="detail-projet">
+
+    <a href="{{ path('app_home') }}" class="retour">
+        ← Retour au portfolio
+    </a>
+
+    <p class="subtitle">DÉTAIL DU PROJET</p>
+
+    <h1>{{ projet.titre }}</h1>
+
+    <p class="description">
+        {{ projet.description }}
+    </p>
+
+    <div class="detail-layout">
+        <div class="detail-main">
+            <div class="detail-bloc">
+                <h2>Présentation du projet</h2>
+                <p>
+                    Présente ici le contexte, les objectifs et les fonctionnalités
+                    de ton projet.
+                </p>
+            </div>
+
+            <div class="detail-bloc">
+                <h2>Compétences acquises</h2>
+                <p>
+                    Présente les compétences techniques et personnelles
+                    acquises durant ce projet.
+                </p>
+            </div>
+        </div>
+
+        <aside class="detail-meta">
+            <div class="detail-bloc">
+                <h2>Technologies utilisées</h2>
+
+                <div class="techs">
+                    {% for technologie in projet.technologies %}
+                        <span>{{ technologie }}</span>
+                    {% endfor %}
+                </div>
+            </div>
+
+            <div class="detail-bloc">
+                <h2>Temps consacré</h2>
+                <p>{{ projet.temps }}</p>
+            </div>
+        </aside>
+    </div>
+
+    <a href="{{ projet.github }}"
+       target="_blank"
+       rel="noopener noreferrer"
+       class="btn-projet">
+        Voir le code sur GitHub →
+    </a>
+
+</section>
+
+{% endblock %}
