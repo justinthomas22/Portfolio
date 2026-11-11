@@ -7,33 +7,41 @@
 
 <section class="detail-projet">
 
-    <a href="{{ path('app_home') }}" class="retour">
-        ← Retour au portfolio
+    <a href="{{ path('app_home') }}" class="btn-retour retour">
+        ← Retour aux projets
     </a>
 
     <p class="subtitle">DÉTAIL DU PROJET</p>
 
-    <h1>{{ projet.titre }}</h1>
+    <div class="detail-intro">
+        <div>
+            <h1>{{ projet.titre }}</h1>
 
-    <p class="description">
-        {{ projet.description }}
-    </p>
+            <p class="description">
+                {{ projet.description }}
+            </p>
+        </div>
+
+        {% if projet.image %}
+            <img class="projet-image"
+                 src="{{ asset('images/' ~ projet.image) }}"
+                 alt="Illustration du projet {{ projet.titre }}">
+        {% endif %}
+    </div>
 
     <div class="detail-layout">
         <div class="detail-main">
             <div class="detail-bloc">
                 <h2>Présentation du projet</h2>
                 <p>
-                    Présente ici le contexte, les objectifs et les fonctionnalités
-                    de ton projet.
+                    {{ projet.presentation|nl2br }}
                 </p>
             </div>
 
             <div class="detail-bloc">
                 <h2>Compétences acquises</h2>
                 <p>
-                    Présente les compétences techniques et personnelles
-                    acquises durant ce projet.
+                    {{ projet.competences|nl2br }}
                 </p>
             </div>
         </div>
@@ -52,6 +60,11 @@
             <div class="detail-bloc">
                 <h2>Temps consacré</h2>
                 <p>{{ projet.temps }}</p>
+            </div>
+
+            <div class="detail-bloc">
+                <h2>Nombre de personnes</h2>
+                <p>{{ projet.personnes }} personne{% if projet.personnes > 1 %}s{% endif %}</p>
             </div>
         </aside>
     </div>

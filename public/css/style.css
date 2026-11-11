@@ -393,6 +393,13 @@ h1 span {
     color: #f3f4f6;
 }
 
+.detail-intro {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) minmax(240px, 320px);
+    gap: 48px;
+    align-items: center;
+}
+
 .detail-projet h1 {
     max-width: 760px;
     font-size: 46px;
@@ -402,21 +409,31 @@ h1 span {
     margin: 22px 0 18px;
 }
 
-.detail-projet > .description {
+.detail-intro .description {
     max-width: 680px;
     margin-bottom: 48px;
     color: #d1d5db;
 }
 
+.projet-image {
+    width: 100%;
+    max-height: 220px;
+    object-fit: cover;
+    border: 1px solid #374151;
+}
+
 .retour {
     display: inline-block;
-    color: #9ca3af;
+    border: 1px solid #4b5563;
+    color: #d1d5db;
     text-decoration: none;
+    padding: 8px 12px;
     margin-bottom: 58px;
-    transition: color 0.2s ease;
+    transition: border-color 0.2s ease, color 0.2s ease;
 }
 
 .retour:hover {
+    border-color: #60a5fa;
     color: #f3f4f6;
 }
 
@@ -475,6 +492,17 @@ h1 span {
 
 .detail-projet > .btn-projet {
     margin-top: 6px;
+}
+
+@media (max-width: 700px) {
+    .detail-intro {
+        grid-template-columns: 1fr;
+        gap: 24px;
+    }
+
+    .projet-image {
+        max-height: 260px;
+    }
 }
 
 
