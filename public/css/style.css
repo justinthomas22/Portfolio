@@ -80,6 +80,28 @@ nav {
     text-decoration: none;
 }
 
+.nav-links a:hover {
+    color: #60a5fa;
+}
+
+.nav-cv {
+    border: 1px solid #60a5fa;
+    color: #f3f4f6 !important;
+    padding: 8px 14px;
+    transition: background 0.2s ease, color 0.2s ease;
+}
+
+.nav-cv:hover {
+    background: #60a5fa;
+    color: #111827 !important;
+}
+
+.nav-cv:focus-visible,
+.cv-download:focus-visible {
+    outline: 2px solid #d1d5db;
+    outline-offset: 4px;
+}
+
 
 .hero {
     max-width: 1100px;
@@ -494,7 +516,72 @@ h1 span {
     margin-top: 6px;
 }
 
+.cv-section {
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 72px 20px 90px;
+    text-align: center;
+}
+
+.cv-section h1 {
+    font-size: 40px;
+    margin-bottom: 12px;
+}
+
+.cv-intro {
+    color: #d1d5db;
+    margin-bottom: 32px;
+}
+
+.cv-viewer {
+    background: #1f2937;
+    border: 1px solid #374151;
+    height: min(78vh, 1050px);
+    min-height: 600px;
+    width: 100%;
+}
+
+.cv-download {
+    background: transparent;
+    border: 1px solid #60a5fa;
+    color: #f3f4f6;
+    display: inline-block;
+    margin-top: 24px;
+    padding: 12px 18px;
+    text-decoration: none;
+    transition: background 0.2s ease, color 0.2s ease;
+}
+
+.cv-download:hover {
+    background: #60a5fa;
+    color: #111827;
+}
+
 @media (max-width: 700px) {
+    header {
+        padding: 20px;
+    }
+
+    .nav-links {
+        align-items: flex-end;
+        flex-wrap: wrap;
+        gap: 12px 16px;
+        justify-content: flex-end;
+    }
+
+    .cv-section {
+        padding-top: 48px;
+    }
+
+    .cv-section h1 {
+        font-size: 34px;
+    }
+
+    .cv-viewer {
+        height: 70vh;
+        min-height: 450px;
+    }
+
     .detail-intro {
         grid-template-columns: 1fr;
         gap: 24px;

@@ -1,0 +1,23 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}CV - Thomas JUSTIN{% endblock %}
+
+{% block body %}
+<section class="cv-section">
+    <h1>Mon CV</h1>
+    <p class="cv-intro">Consultez mon parcours et mes compétences.</p>
+
+    <embed
+        class="cv-viewer"
+        src="{{ asset('documents/CV.pdf') }}"
+        type="application/pdf"
+        title="CV Thomas JUSTIN"
+    >
+
+    <a class="cv-download"
+       href="{{ asset('documents/cv.pdf') }}"
+       download="CV-Thomas-JUSTIN.pdf">
+        Télécharger mon CV
+    </a>
+</section>
+{% endblock %}

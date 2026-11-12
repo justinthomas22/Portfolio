@@ -15,4 +15,10 @@ final class HomeController extends AbstractController
             'controller_name' => 'HomeController',
         ]);
     }
+
+    #[Route('/cv', name: 'app_cv')]
+    public function cv(): Response
+    {
+        return $this->render('cv/index.html.twig');
+    }
 }
