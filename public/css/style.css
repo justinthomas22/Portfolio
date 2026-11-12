@@ -47,7 +47,8 @@ body::after {
 }
 
 header,
-main {
+main,
+footer {
     position: relative;
     z-index: 1;
 }
@@ -55,6 +56,22 @@ main {
 header {
     padding: 25px 10%;
     border-bottom: 1px solid #374151;
+}
+
+footer {
+    border-top: 1px solid #374151;
+    padding: 25px 10%;
+}
+
+.footer-content {
+    align-items: center;
+    display: flex;
+    justify-content: space-between;
+}
+
+.footer-content p {
+    color: #9ca3af;
+    font-size: 14px;
 }
 
 nav {
@@ -560,6 +577,16 @@ h1 span {
 @media (max-width: 700px) {
     header {
         padding: 20px;
+    }
+
+    footer {
+        padding: 20px;
+    }
+
+    .footer-content {
+        align-items: flex-start;
+        flex-direction: column;
+        gap: 12px;
     }
 
     .nav-links {
