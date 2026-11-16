@@ -250,35 +250,59 @@ h1 span {
 }
 
 
-.social-links {
-    display: flex;
-    align-items: center;
-    gap: 25px;
-    margin-top: 25px;
+.contact-links {
+    display: grid;
+    gap: 18px;
+    margin-top: 28px;
 }
 
-.social-links a {
-    width: 55px;
-    height: 55px;
-    display: flex;
+.contact-link {
     align-items: center;
-    justify-content: center;
+    display: flex;
+    gap: 14px;
+}
+
+.contact-link-icon {
+    align-items: center;
     background: #1f2937;
     border: 1px solid #374151;
-    border-radius: 12px;
-    transition: all 0.3s ease;
+    display: flex;
+    flex: 0 0 46px;
+    height: 46px;
+    justify-content: center;
+    text-decoration: none;
+    transition: border-color 0.2s ease, background 0.2s ease;
 }
 
-.social-links img {
-    width: 32px;
-    height: 32px;
+.contact-link-icon img {
+    height: 26px;
+    width: 26px;
 }
 
-.social-links a:hover {
-    transform: translateY(-6px);
+.contact-link-icon:hover,
+.contact-link-icon:focus-visible {
     background: #374151;
     border-color: #60a5fa;
-    box-shadow: 0 5px 20px rgba(37, 99, 235, 0.3);
+    outline: none;
+}
+
+.contact-mail-icon {
+    color: #60a5fa;
+    font-size: 22px;
+    font-weight: 600;
+}
+
+.contact-link-name {
+    color: #d1d5db;
+    line-height: 1.5;
+    text-decoration: none;
+    transition: color 0.2s ease;
+}
+
+.contact-link-name:hover,
+.contact-link-name:focus-visible {
+    color: #60a5fa;
+    outline: none;
 }
 
 .cursor {
@@ -574,6 +598,124 @@ h1 span {
     color: #111827;
 }
 
+.contact-section {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 92px 20px 110px;
+}
+
+.contact-intro {
+    max-width: 650px;
+    margin-bottom: 52px;
+}
+
+.contact-intro h1 {
+    font-size: 46px;
+    margin-bottom: 18px;
+}
+
+.contact-intro > p:last-child,
+.contact-details > p:not(.contact-details-label) {
+    color: #d1d5db;
+    line-height: 1.8;
+}
+
+.contact-layout {
+    display: grid;
+    grid-template-columns: minmax(0, 1.3fr) minmax(230px, 0.7fr);
+    gap: 80px;
+    border-top: 1px solid #374151;
+    padding-top: 30px;
+}
+
+.contact-form {
+    display: grid;
+    gap: 20px;
+}
+
+.contact-form-column {
+    display: grid;
+    gap: 20px;
+}
+
+.form-feedback {
+    border: 1px solid;
+    line-height: 1.5;
+    padding: 12px 14px;
+}
+
+.form-feedback-success {
+    border-color: #34d399;
+    color: #a7f3d0;
+}
+
+.form-feedback-error {
+    border-color: #f87171;
+    color: #fecaca;
+}
+
+.form-row {
+    display: grid;
+    gap: 8px;
+}
+
+.form-row label,
+.contact-details-label {
+    color: #60a5fa;
+    font-size: 12px;
+    font-weight: 600;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+}
+
+.form-row input,
+.form-row textarea {
+    background: #1f2937;
+    border: 1px solid #374151;
+    border-radius: 0;
+    color: #f3f4f6;
+    font: inherit;
+    padding: 12px 14px;
+    resize: vertical;
+    transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.form-row input:focus,
+.form-row textarea:focus {
+    border-color: #60a5fa;
+    box-shadow: 0 0 0 2px rgba(96, 165, 250, 0.15);
+    outline: none;
+}
+
+.contact-submit {
+    background: transparent;
+    border: 1px solid #60a5fa;
+    color: #f3f4f6;
+    cursor: pointer;
+    justify-self: start;
+    padding: 12px 18px;
+    transition: background 0.2s ease, color 0.2s ease;
+}
+
+.contact-submit:hover {
+    background: #60a5fa;
+    color: #111827;
+}
+
+.contact-submit:focus-visible {
+    outline: 2px solid #d1d5db;
+    outline-offset: 4px;
+}
+
+.contact-details {
+    border-left: 1px solid #374151;
+    padding-left: 30px;
+}
+
+.contact-details-label {
+    margin-bottom: 16px;
+}
+
 @media (max-width: 700px) {
     header {
         padding: 20px;
@@ -607,6 +749,26 @@ h1 span {
     .cv-viewer {
         height: 70vh;
         min-height: 450px;
+    }
+
+    .contact-section {
+        padding-top: 48px;
+    }
+
+    .contact-intro h1 {
+        font-size: 38px;
+    }
+
+    .contact-layout {
+        grid-template-columns: 1fr;
+        gap: 48px;
+    }
+
+    .contact-details {
+        border-left: 0;
+        border-top: 1px solid #374151;
+        padding-left: 0;
+        padding-top: 28px;
     }
 
     .detail-intro {
