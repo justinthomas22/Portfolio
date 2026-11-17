@@ -249,6 +249,76 @@ h1 span {
     line-height: 1.8;
 }
 
+.competences-section {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 20px 20px 92px;
+}
+
+.competences-intro {
+    max-width: 600px;
+    margin-bottom: 34px;
+}
+
+.competences-intro h2 {
+    font-size: 34px;
+    font-weight: 600;
+    letter-spacing: -0.02em;
+    margin-bottom: 16px;
+}
+
+.competences-intro > p:last-child {
+    color: #9ca3af;
+    line-height: 1.7;
+}
+
+.competences-marquee {
+    border-top: 1px solid #374151;
+    border-bottom: 1px solid #374151;
+    overflow: hidden;
+}
+
+.competences-track {
+    animation: defilement-competences 28s linear infinite;
+    display: flex;
+    width: max-content;
+}
+
+.competences-marquee:hover .competences-track {
+    animation-play-state: paused;
+}
+
+.competences-list {
+    display: flex;
+    flex-shrink: 0;
+    padding: 0 24px;
+}
+
+.competences-list span {
+    color: #d1d5db;
+}
+
+.competence-item {
+    align-items: center;
+    border-right: 1px solid #374151;
+    display: flex;
+    gap: 10px;
+    padding: 18px 24px;
+}
+
+.competence-item img {
+    height: 28px;
+    width: 28px;
+}
+
+.competence-item .symfony-logo {
+    filter: invert(1);
+}
+
+.competence-item:first-child {
+    padding-left: 0;
+}
+
 
 .contact-links {
     display: grid;
@@ -771,6 +841,12 @@ h1 span {
         padding-top: 28px;
     }
 
+    .competence-item,
+    .competence-item:first-child {
+        border-right: 1px solid #374151;
+        padding: 16px;
+    }
+
     .detail-intro {
         grid-template-columns: 1fr;
         gap: 24px;
@@ -785,5 +861,21 @@ h1 span {
 @keyframes clignoter {
     50% {
         opacity: 0;
+    }
+}
+
+@keyframes defilement-competences {
+    from {
+        transform: translateX(0);
+    }
+
+    to {
+        transform: translateX(-50%);
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .competences-track {
+        animation: none;
     }
 }
